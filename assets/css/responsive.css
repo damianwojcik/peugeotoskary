@@ -1,0 +1,30 @@
+@media screen and (max-width: 1310px){
+
+    header .container,
+    .section-info .container,
+    footer .container{
+        width: 90%;
+    }
+
+    .section-content .container{
+        width: 100%
+    }
+
+}
+
+
+@media screen and (max-width: 1024px){
+
+    article{
+        width: 50%;
+    }
+
+    article:nth-child(n+4){
+        margin-top: 0;
+    }
+
+    article:nth-child(n+2){
+        margin-top: 60px;
+    }
+
+}
