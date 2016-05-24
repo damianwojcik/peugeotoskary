@@ -1,23 +1,17 @@
 jQuery(document).ready(function($) {
 
 	// init functions
-	nav_menu_toggle();
 	smoothScroll();
+	masonry_init();
+	scrolltoTop();
 
-	// function masonry_init(){
-	// 	$('.articles-wrapper').masonry({
-	// 		// options
-	// 		itemSelector: 'article',
-	// 		// columnWidth: '.grid-sizer'
-	// 	});
-	// }
-
-
-    function nav_menu_toggle(){
-	    $(".menu-toggle").click(function() {
-	        $(".row-mobile").slideToggle(500);
-	    });
-    }
+	function masonry_init(){
+		$('.articles-wrapper').masonry({
+			// options
+			itemSelector: 'article',
+			originLeft: true
+		});
+	}
 
 	function smoothScroll(){
 
@@ -34,6 +28,37 @@ jQuery(document).ready(function($) {
 		            return false;
 		        }
 		    }
+		});
+
+	}
+
+
+	function scrolltoTop(){
+
+		// browser window scroll (in pixels) after which the "back to top" link is shown
+		var offset = 300,
+			//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+			offset_opacity = 1200,
+			//duration of the top scrolling animation (in ms)
+			scroll_top_duration = 700,
+			//grab the "back to top" link
+			$back_to_top = $('.cd-top');
+
+		//hide or show the "back to top" link
+		$(window).scroll(function(){
+			( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+			if( $(this).scrollTop() > offset_opacity ) {
+				$back_to_top.addClass('cd-fade-out');
+			}
+		});
+
+		//smooth scroll to top
+		$back_to_top.on('click', function(event){
+			event.preventDefault();
+			$('body,html').animate({
+				scrollTop: 0 ,
+				}, scroll_top_duration
+			);
 		});
 
 	}

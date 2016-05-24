@@ -36,6 +36,9 @@
 
 			<div class="span12">
 
+				<div class="articles-wrapper">
+
+
 				<?php
 
 					if( have_rows('site_section_boxes') ):
@@ -47,16 +50,17 @@
 							$movie_title = get_sub_field('movie_title');
 							$movie_director = get_sub_field('movie_director');
 							$movie_description = get_sub_field('movie_description');
-							$trimmed_description = wp_trim_words( $movie_description, 50 );
+
 				?>
 
 				<article>
 
 					<div class="article-wrap">
 
-						<?php
-							if( !empty($image) ): ?>
-								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+						<?php if( !empty($image) ): ?>
+
+							<div class="img-wrap" style="background-image: url('<?php echo $image['url']; ?>')"></div>
+
 						<?php endif; ?>
 
 						<?php if( !empty($movie_title) ): ?>
@@ -72,9 +76,9 @@
 
 						<?php endif; ?>
 
-						<?php if( !empty($trimmed_description) ): ?>
+						<?php if( !empty($movie_description) ): ?>
 
-							<p><?php echo $trimmed_description; ?></p>
+							<p><?php echo $movie_description; ?></p>
 
 						<?php endif; ?>
 
@@ -92,8 +96,11 @@
 
 				?>
 
+				</div>
+				<!-- END articles-wrapper -->
 
 			</div>
+			<!-- END span12 -->
 
 		</div>
 		<!-- END row -->
@@ -101,6 +108,7 @@
 	</div>
 
 </div>
+<!-- END section-content -->
 
 <?php
 
@@ -120,26 +128,31 @@
 
 		<div class="row">
 
-			<div class="section-info-wrap">
+			<div class="wrap">
 
 				<div class="span8">
 
 					<h2><?php the_field('section_info_headline', 'option'); ?></h2>
 
 				</div>
+				<!-- END span8 -->
 
 				<div class="span4">
 
 					<p><?php the_field('section_info', 'option'); ?></p>
 
 				</div>
+				<!-- END span4 -->
 
 			</div>
+			<!-- END wrap -->
 
 		</div>
 
 	</div>
 
 </div>
+<!-- END section-info -->
+
 
 <?php get_footer(); ?>

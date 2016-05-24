@@ -15,16 +15,105 @@
 
 @media screen and (max-width: 1024px){
 
+    .section-content .container{
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
     article{
         width: 50%;
     }
 
-    article:nth-child(n+4){
-        margin-top: 0;
+    .section-info .container{
+        padding: 0;
     }
 
-    article:nth-child(n+2){
-        margin-top: 60px;
+    .section-info .wrap{
+        padding: 70px 0 50px 0;
     }
+
+    .section-info .span8,
+    .section-info .span4{
+        width: 100%;
+        display: block;
+        margin: 0 0 30px 0;
+        float: none;
+    }
+
+
+}
+
+
+@media screen and (max-width: 768px){
+
+    .icon-circle{
+        margin-right: 0;
+        float: none;
+        margin-bottom: 25px;
+    }
+
+    header h1{
+        font-size: 38px;
+    }
+
+    header h2{
+        font-size: 24px;
+    }
+
+    header a strong{
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    header .header-intro{
+        -moz-column-count: 1;
+        -moz-column-gap: 0;
+        text-align: center;
+    }
+
+    .section-content h2{
+        font-size: 26px;
+        line-height: 32px;
+        float: none;
+        margin-bottom: 30px;
+    }
+
+    .section-content .container{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .section-content .span12{
+        text-align: center;
+    }
+
+    article{
+        width: 100%;
+    }
+
+    article h3{
+        font-size: 18px;
+    }
+
+    article p{
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+
+    .section-info h2{
+        font-size: 22px;
+    }
+
+}
+
+
+@media screen and (max-width: 480px){
+
+
+    .section-content .container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
 
 }

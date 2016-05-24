@@ -21,6 +21,7 @@
 
 		// load scripts
 		wp_enqueue_script("jquery");
+		wp_enqueue_script( 'masonry', THEME_URL . '/assets/js/masonry.min.js' );
 		wp_enqueue_script( 'site_scripts', THEME_URL . '/assets/js/scripts.js' );
 
 	}
